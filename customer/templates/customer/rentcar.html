@@ -1,0 +1,106 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'style/rentcar.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+#row1 #navitems1 #table td{
+  width: 100px;
+  margin-left: 100px;
+  font-weight: 600;
+}
+#row1 #navitems1 table td a{
+  text-decoration: none;
+  color: black;
+}
+#navitems1 .p{
+  background-color: rgb(143, 140, 140);
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  margin-left: 37px;
+  position: absolute;
+  margin-top: 14px;
+  font-size: 21px;
+}
+.p {
+  margin-top: 20px;
+  padding-top: 0px;
+  padding-left: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+#navitems1 a{
+  text-decoration: none;
+  color: black;
+  margin-right: 5px;
+}
+.customerlogout{
+  display: none;
+  font-size: 15px;
+  font-weight: 600;
+}
+.customerlogout a{
+  color: red;
+  margin-right: 50px;
+}
+#firstletter{
+  margin-left: 4px;
+  margin-top: 2px;
+  color: white;
+}
+
+</style>
+  </head>
+  <body>
+    <div class="container-fluid">
+        <div class="row" id="row1" style="background-color: rgb(255, 255, 255);">
+            <div class="col-4">
+                <img src="{% static 'images/logo.png' %}" alt="" style="width: 80px; height: 80px;">
+            </div>
+            <div class="col-4" id="navitems">
+                <table>
+                    <tr>
+                    <td><a href="">Home</a></td>
+                    <td><a href="{% url 'customer:rentcar' %}">rentcar</a></td>
+                    <td><a href="">Contact Us</a></td>
+                    <td><a href="">About Us</a></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-3"></div>
+            <div class="col-1" id="navitems1">
+              <div class="p" onclick="document.getElementById('hidden').style.display='block'"><p id="firstletter">{{firstletter}}</p></div>   
+              <div class="customerlogout" id="hidden"> <a href="{% url 'customer:logout' %}" style="color: rgb(2, 17, 22)">LogOut</a></div>     
+             
+            </div>
+        </div>
+        <div class="row" id="row2">
+          {% for i in products %}
+            <div class="col-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{i.image.url}}" class="card-img-top" alt="..." height="180px">
+                    <div class="card-body">
+                      <h5 class="card-title">{{i.car_name}}</h5>
+                      <span class="fa fa-star checked" style="color: orange;"></span>
+                      <span class="fa fa-star checked" style="color: orange;"></span>
+                      <span class="fa fa-star checked" style="color: orange;"></span>
+                      <span class="fa fa-star" style="color: rgb(255, 166, 0);"></span>
+                      <span class="fa fa-star"></span>
+                      <p class="card-text">{{i.car_brand}}</p>
+                      <p class="card-text">{{i.rent_charge}}</p>
+                      <a href="{% url 'customer:viewdetails' i.id %}" class="btn btn-primary">View Details</a>
+                    </div>
+                  </div>
+            </div>
+          {% endfor %}
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  </body>
+</html>

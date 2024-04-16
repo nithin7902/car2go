@@ -1,0 +1,39 @@
+#navitems table td{
+    width: 700px;
+    font-weight: 600;
+}
+#row1 #navitems1 table td{
+    width: 100px;
+    margin-left: 100px;
+    font-weight: 600;
+}
+#row1 #navitems1 table td a{
+    text-decoration: none;
+    color: black;
+}
+#row1 table td a{
+    text-decoration: none;
+    color: black;
+}
+#row1 #table{
+    margin-left: 160px;
+    margin-top: 20px;
+}
+#row1 table{
+    margin-top: 20px;
+}
+#row1 #navitems table td{
+    width: 100px;
+}
+#row1{
+    background-color: rgb(96, 146, 146);
+}
+#row1 table td a:hover{
+    background-color: black;
+    color: white;
+    border-radius: 3px;
+}
+#row1 #table td a:hover{
+    background-color: black;
+    color: white;
+}

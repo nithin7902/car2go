@@ -1,0 +1,23 @@
+.login{
+    background-image: url();
+    background-size: cover;
+    height: 645px;
+}
+.login form{
+    padding-left: 100px;
+    color: black;
+
+}
+button{
+    width: 60%;
+    height: 40px;
+}
+input{
+    border-radius: 4px;
+}
+#row1 button{
+    padding-right: 10px;
+}
+td a{
+    border: 1px solid black;
+}

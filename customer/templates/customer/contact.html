@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+.container-fluid{
+    /* background-image: url(https://www.verifiedmarketreports.com/images/blogs/02-24/Top%207%20Trends%20In%20Car%20Rental%20Service.png); */
+    height: 635px;
+    /* background-color: rgba(0, 0, 0, 0.1); */
+}
+#row1 button{
+    width: 150px;
+    height: 120px;
+    margin-left: 60px;
+    margin-top: 40px;
+    border-radius: 10px;
+    font-weight: 600;
+    border: none;
+}
+#row2{
+    margin-top: 55px;    
+}
+#row2 input{
+    height: 40px;
+    width: 70%;
+    border: none;
+    border-radius: 5px;
+}
+#row2 button{
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+}
+#row2 h1{
+    color: black;
+}
+#row1 p{
+    font-size: small;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container-fluid" >
+        <div class="row" id="row1">
+            <!-- <div style=" background-color: rgba(0, 0, 0, 0.2); height: 635px; width: 1600px;position: absolute;"></div> -->
+
+            <div class="col-2"></div>
+            <div class="col-8">
+                <table>
+                    <tr>
+                        <th><button><i class="fas fa-map-marker-alt" style="font-size: 25px;"></i> <br>OUR MAIN OFFICE<p>Prime Tower 33rd Floor,Dubai </p></button></th>
+                        <th><button> <i class="fas fa-mobile" style="font-size: 25px;"></i> <br>PHONE NUMBER <p>+971 4 368 5697 <br>+97156 765 3233</p></button></th>
+                        <th><button> <i class="fas fa-fax" style="font-size: 25px;"></i> <br>FAX <p>503-227-8777</p></button></th>
+                        <th><button> <i class="fas fa-envelope" style="font-size: 25px;"></i> <br>Email <p>info@car2go </p></button></th>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-2"></div>
+        </div>
+        <div class="row" id="row2">
+            <div class="col-1"></div>
+            <div class="col-5">
+                <h1>CONTACT INFO</h1>
+                <p >Lorem ipsum dolor sit amet consectetur, adipisicing elit. <br>A temporibus magni eius impedit eaque amet <br>quia aut corrupti sapiente <br>qui nam ducimus facere culpa similique iure natus unde,<br> omnis accusantium.</p>
+            </div>
+            <div class="col-5" >
+             <div class="form">
+                <h6 style="font-weight: 600; color: white;">Email</h6>
+                <label for="email"></label>
+                <input type="email" placeholder="Enter a valid email address" style="border-bottom: 1px solid black;">
+
+                <h6 style="font-weight: 600; color: white;">Name</h6>
+                <label for="text"></label>
+                <input type="text" placeholder="Enter your name"> 
+
+                <h6 style="font-weight: 600; color: white;">message</h6>
+                <label for="text"></label>
+              <textarea name="message" id=""cols="49" rows="5" placeholder="Enter Your Message"></textarea> <br><br>
+
+              <button type="submit" style="margin-left: 5px;">Submit</button>
+             </div>
+            </div>
+            <div class="col-1"></div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</html>
