@@ -43,6 +43,17 @@
     border-radius: 20px;
     background-color: rgb(197, 197, 197);
 }
+#row3 .logout p{
+   margin-left: 13px;
+   font-size: 22px;
+   font-weight: 600;
+}
+#logout{
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    font-weight: 600;
+}
     </style>
   </head>
   <body>
@@ -73,11 +84,14 @@
         </div>
     </div>
     {% block content %}
-    <div class="row">
-        <div class="col-11"></div>
-        <div class="col-1">
+    <div class="row" id="row3">
+        <div class="col-10"></div>
+        <div class="col-2">
             <div class="logout">
-                <a href="">logout</a>
+                <p onclick="document.getElementById('hideletter').style.display='block'">{{firstletter}}</p>
+                <div id="hideletter" style="display: none;">
+                    <a href="{% url 'seller:seller_logout' %}" id="logout">logout</a>
+                </div>
             </div>
             
         </div>

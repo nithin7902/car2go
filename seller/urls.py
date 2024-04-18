@@ -9,5 +9,6 @@ urlpatterns=[
     path('seller_views/',views.seller_views,name='seller_views'),
     path('delete_product/<int:product_id>',views.delete_product,name='delete_product'),
     path('update_product/<int:product_id>',views.update_product,name='update_product'),
+    path('seller_logout/',views.seller_logout,name='seller_logout')
 
 ]

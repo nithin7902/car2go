@@ -5,17 +5,23 @@ def seller_login (request):
     if request.method=='POST':
         Email=request.POST['email']
         Password=request.POST['password']
-        if SellerRegistration.objects.filter(email=Email,password=Password).exists():
+        try:
+            sell=SellerRegistration.objects.get(email=Email,password=Password)
+            request.session['seller']=sell.id
             return redirect('seller:seller_dashboard')
-        else:
-            return render(request,'seller/seller_login.html')
+        except SellerRegistration.DoesNotExist:
+            return render(request,'seller/seller_login.html',{'msg':'invalid username or password'})
     return render(request,'seller/seller_login.html')
-
 def seller_home (request):
     return render(request,'seller/seller_home.html')
 
 def seller_dashboard (request):
-    return render(request,'seller/seller_dashboard.html')
+    if 'seller' in request.session:
+        seller_id = request.session.get('seller')
+        cust=SellerRegistration.objects.get(id=seller_id)
+        customer=cust.email
+        firstletter=customer[0]
+        return render(request,'seller/seller_dashboard.html',{'firstletter':firstletter})
 
 def addproduct (request):
     if request.method=='POST':
@@ -64,3 +70,11 @@ def update_product(request,product_id):
         car.save()
         return redirect('seller:seller_views')
     return render(request,'seller/car_update.html',{'car':car})
+def seller_logout(request):
+    if 'seller' in request.session:
+        del request.session['seller']
+        return render(request,'seller/seller_home.html')
+    else:
+        return render (request,'seller/seller_home.html')
+
+
