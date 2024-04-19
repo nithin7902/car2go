@@ -1,4 +1,5 @@
-<!-- {% extends 'seller/seller_dashboard.html' %} -->
+
+
 {% load static %}
 <!doctype html>
 <html lang="en">
@@ -12,26 +13,32 @@
     .customerlogout{
       border: 2px solid black;
     }
+    #row1{
+      margin-top: 40px;
+    }
 
     </style>
   </head>
   <body>
    
-    {% block content %}
+<div class="container-fluid">
+<div class="row0">
+
+</div>
     <div class="row" id="row1">
       <div class="col-11"></div>
       <div class="col-1">
           <div class="customerlogout" style="background-color: rgb(161, 155, 155);height: 40px;width: 40px;border-radius: 20px;position: absolute;right: 25px;top: 14px;">
-          <p style="color: white;margin-left: 14px;margin-top: 2px; font-size: 21px;">{{firstletter}}</p>
+          <p style="color: white;margin-left: 13px;margin-top: 1px; font-size: 21px;">{{firstletter}}</p>
           </div>
-          
+          <div class="p" onclick="document.getElementById('hidden').style.display='block'"><p id="firstletter">{{firstletter}}</p></div>   
+          <div class="customerlogout" id="hidden"> <a href="{% url 'customer:logout' %}" style="color: rgb(2, 17, 22)">LogOut</a></div>     
           
       </div>
   </div>
     <div class="row">
       <div class="col-6">
-        <img src="{{car.image.url}}" alt="">
-      </div>
+        <img src="{{car.image.url}}" alt=""></div>
       <div class="col-6">
     <h1>{{car.car_name}}</h1>
                 <h2>{{car.car_brand}}</h2>
@@ -47,7 +54,8 @@
           </div>
         </div>
     </div>
-    {% endblock %}
+   
+  </div> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   </body>
 </html>
