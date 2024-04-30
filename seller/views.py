@@ -76,5 +76,6 @@ def seller_logout(request):
         return render(request,'seller/seller_home.html')
     else:
         return render (request,'seller/seller_home.html')
-
-
+    
+def index (request):
+    return render(request,'customer/index.html')    

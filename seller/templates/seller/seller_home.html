@@ -111,10 +111,13 @@ h1{
     text-align: center;
 }
 #navitems table td{
-    padding-left: 30px;
+    padding-right: 60px;
 }
 #navitems1 #table td a:hover{
     color: rgb(27, 148, 189);
+}
+#navitems table td h1{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
 }
 
     </style>
@@ -128,15 +131,17 @@ h1{
         <div class="col-4" id="navitems">
             <table>
                 <tr>
-                    <td><h2> Rent The <span style="color: rgb(31, 129, 161);">Best</span> Cars</h2></td>
+                    <td><h1> Rent The <span style="color: rgb(31, 129, 161);font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Best</span> Cars</h1></td>
                 </tr>
             </table>
         </div>
         <div class="col-4" id="navitems1">
             <table id="table">
                 <tr>
-                    <td><a href="{% url 'customer:contactus' %}">Contact Us</a></td>
-                    <td><a href=""></a></td>
+                    <td><a href="{% url 'seller:index' %}">Home</a></td>
+                    <td></td>
+                    <td><a href="{% url 'customer:contactus' %}">Contact</a></td>
+                    <td></td>
                     <td><a href="{% url 'seller:seller_login' %}">Login</a></td>
 
                 </tr>

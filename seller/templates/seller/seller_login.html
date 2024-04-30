@@ -21,6 +21,10 @@
       input{
         border-radius: 7px;
       }
+      #alert{
+        color: red;
+        font-weight: 500;
+      }
     </style>
   </head>
   <body>
@@ -28,17 +32,35 @@
       <div class="row" id="row1">
         <div class="col-4"></div>
         <div class="col-4">
-          <form method="post">
+          <form method="post" onsubmit="return seller()">
             {% csrf_token %}
             <h2>login</h2><br><br>
-            <input type="email" placeholder="email" name="email"><br><br>
-            <input type="password" placeholder="password" name="password"><br><br><br>
-            <button type="submit">Login</button>
+            <input type="email" placeholder="email" id="email" name="email"><br><br>
+            <input type="password" placeholder="password" id="password" name="password"><br><br><br>
+            <p id="alert"></p>
+            <button type="submit" class="btn btn-primary">Login</button>
           </form>
         </div>
         <div class="col-4"></div>
       </div>
     </div>
+    <script>
+      function seller(){ 
+        var email=document.getElementById('email').value
+        var password=document.getElementById('password').value
+
+      if (email==""){
+document.getElementById('alert').innerHTML='Please enter your email'
+    return false;
+  }
+  if (password==""){
+document.getElementById('alert').innerHTML='Please enter your password'
+    return false;
+
+  return true
+}
+    }
+    </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   </body>
 </html>
