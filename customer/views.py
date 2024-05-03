@@ -32,6 +32,8 @@ def rentcar (request):
         cust=Customer.objects.get(id=customer_id)
         customer=cust.name
         firstletter=customer[0]
+        customer
+        # firstletter=firstletter.upper()
         products=Products.objects.all()
         return render(request,'customer/rentcar.html',{'products':products,'firstletter':firstletter})
     else:
@@ -46,6 +48,7 @@ def viewdetails (request,car_id):
         cust=Customer.objects.get(id=customer_id)
         customer=cust.name
         firstletter=customer[0]
+        # firstletter=firstletter.upper()
         car=Products.objects.get(id=car_id)
         return render(request,'customer/viewdetails.html',{'car':car ,'firstletter':firstletter})
     else:

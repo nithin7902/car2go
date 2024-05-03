@@ -21,6 +21,7 @@ def seller_dashboard (request):
         cust=SellerRegistration.objects.get(id=seller_id)
         customer=cust.email
         firstletter=customer[0]
+        # firstletter=firstletter.upper()
         return render(request,'seller/seller_dashboard.html',{'firstletter':firstletter})
 
 def addproduct (request):

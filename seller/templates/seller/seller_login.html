@@ -37,7 +37,7 @@
             <h2>login</h2><br><br>
             <input type="email" placeholder="email" id="email" name="email"><br><br>
             <input type="password" placeholder="password" id="password" name="password"><br><br><br>
-            <p id="alert"></p>
+            <p id="alert">{{msg}}</p>
             <button type="submit" class="btn btn-primary">Login</button>
           </form>
         </div>
@@ -56,6 +56,12 @@ document.getElementById('alert').innerHTML='Please enter your email'
   if (password==""){
 document.getElementById('alert').innerHTML='Please enter your password'
     return false;
+    
+  if(password=password2)
+  {
+document.getElementById('alert').innerHTML='Password incorrect !'
+    return false;
+  }
 
   return true
 }
