@@ -51,7 +51,7 @@
             <input type="email" placeholder="Email" id="email" name="email"> <br> <br>
             <label for="password"></label>
             <input type="password" placeholder="create password" id="password" name="password"> <br> <br>
-            <label for="password"></label>
+            <label for="passwords"></label>
             <input type="password" placeholder="confirm Password" id="password2" name="password2"> <br> <br> <br>
             <p id="msg" style="color: red;font-weight: 500;"></p>
             <button type="submit" class="btn btn-primary">Signup</button>
@@ -69,6 +69,7 @@
   var number=document.getElementById('number').value
   var email=document.getElementById('email').value
   var password=document.getElementById('password').value
+
   var password2=document.getElementById('password2').value
   if (name==""){
 document.getElementById('msg').innerHTML='Please enter your name'
@@ -93,9 +94,9 @@ document.getElementById('msg').innerHTML='Please enter your email'
     
   }
 
-  if(password!==password2);
+  if(password!=password2)
   {
-    document.getElementById('msg').innerHTML='Password do not match !'
+document.getElementById('msg').innerHTML='Password do not match !'
     return false;
   }
   return true
